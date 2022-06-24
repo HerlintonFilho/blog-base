@@ -6,14 +6,19 @@ const categoriesController = require("./categories/CatergoriesController");
 const articlesController = require("./articles/ArticlesController")
 const Article = require("./articles/Article");
 const Category = require("./categories/Category")
+
 //View engine
 app.set('view engine', 'ejs');
+
 //static
 app.use(express.static('public'));
+
 //Body Parser
 app.use(bodyParser.urlencoded({extended: false}));
+
 // app.use = (bodyParser.json()); poha borba 
 app.use(bodyParser.json());
+
 //database
 connection
     .authenticate()
@@ -31,7 +36,8 @@ app.get("/", (req, res)=>{
     Article.findAll({
         order: [
             ['id', 'DESC']
-        ]
+        ],
+        limit: 4
     }).then(articles =>{
         Category.findAll().then(categories =>{
             res.render("index", {articles: articles, categories: categories})
