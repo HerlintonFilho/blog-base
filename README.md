@@ -2,7 +2,7 @@
 
 O blog serve como base de aprendizado de um curso de NodeJS que estou realizando e me aperfeiçoando com alguns projetos.
 
-## Dependecias
+## Dependencias
 * body-parser : version 1.20.0
 
 * ejs : version 3.1.8
