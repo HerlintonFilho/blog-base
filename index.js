@@ -18,7 +18,7 @@ app.set('view engine', 'ejs');
 app.use(session({
     secret: "biscoito",
     cookie:{
-        maxAge: 30000   
+        maxAge: 600000
     }
 }))
 
